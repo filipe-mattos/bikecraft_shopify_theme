@@ -1,0 +1,56 @@
+<section class="introducao" >
+    <div>
+      {% if section.settings.title != blank %}
+        <h1 data-anime="400" class="fadeInDown">{{ section.settings.title | escape }}</h1>
+      {% endif %}
+      <blockquote data-anime="800" class="fadeInDown quote_externo">
+        {% if section.settings.text != blank %}
+          <p>{{section.settings.text}}</p>
+        {% endif %}
+        {% if section.settings.cite %}
+          <cite>{{section.settings.cite}}</cite>
+        {% endif %}
+      </blockquote>
+      {% if section.settings.text_button != blank %}
+        <a data-anime="1200" href="produtos.html" class="btn">{{section.settings.text_button}}</a>
+      {% endif %}
+    </div>
+  </section>
+
+  {% schema %}
+    {
+      "name": {
+        "pt-BR": "Banner Principal"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "pt-BR": "Titulo"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": {
+            "pt-BR": "Frase"
+          }
+        },
+        {
+          "type": "text",
+          "id": "cite",
+          "label": {
+            "pt-BR": "Autor da frase"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_button",
+          "label": {
+            "pt-BR": "Texto do Botão"
+          }
+        }
+      ]
+    }
+  {% endschema %}

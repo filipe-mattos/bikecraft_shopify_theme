@@ -16,8 +16,8 @@
   {% section 'header' %}
 
 
-  <a href="/cart">test</a>
-
+  <!-- <a href="/cart">test</a> -->
+{%- comment -%}
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
       <a href="/account">account</a>
@@ -27,21 +27,10 @@
       {{ 'register' | customer_register_link }}
     {% endif %}
   {% endif %}
-
+{%- endcomment -%}
   <main role="main">
     {{ content_for_layout }}
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <p>ALOLOLOLOLLOLOLOLO</p>
-    <br/>
+    {% section 'banners' %}
   </main>
   {{ content_for_footer }}
   {% section 'footer' %}
