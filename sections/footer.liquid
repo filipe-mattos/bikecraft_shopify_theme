@@ -1,41 +1,345 @@
-  <footer>
-    <div class="footer">
-      <div class="container">
+{% case section.blocks.size %}
+  {% when 1 %}
+    {% assign grid = 'grid-16' %}
+  {% when 2 %}
+    {% assign grid = 'grid-8' %}
+  {% when 3 %}
+    {% assign grid = 'grid-4' %}
+  {% else %}
+    
+{% endcase %}
 
+<footer>
+  <div class="footer">
+    <div class="container">
+    {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "text" %}
         <div class="grid-8 footer_historia">
-          <h3>Nossa História</h3>
-          <p>O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
-            todos os detalhes da vida cotidiana O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
-            todos os detalhes da vida cotidiana </p>
-        </div>
-
+          {% if block.settings.title != blank %}
+            <h3>{{block.settings.title}}</h3>
+          {% endif %}
+          {% if block.settings.text %}
+            <p>{{block.settings.text}}</p>
+          {% endif %}
+        </div>  
+      {% when "link_list" %}
         <div class="grid-4 footer_contato">
-          <h3>Contato</h3>
+          {% if block.settings.title != blank %}
+            <h3>{{block.settings.title}}</h3>
+          {% endif %}
           <ul>
-            <li>- 21 23232-4343</li>
-            <li>- contato@bikcraft.com</li>
-            <li>- Botafogo -RJ</li>
+            {% if block.settings.contact_1 != blank %}
+              <li>- {{ block.settings.contact_1 }}</li>
+            {% endif %}
+            {% if block.settings.contact_2 != blank %}
+              <li>- {{ block.settings.contact_2 }}</li>
+            {% endif %}
+            {% if block.settings.contact_3 != blank %}
+              <li>- {{ block.settings.contact_3 }}</li>
+            {% endif %}
           </ul>
         </div>
-
+      {% when "icons" %}
         <div class="grid-4 footer_redes-sociais">
-          <h3>Redes Sociais</h3>
-          <ul>
+        {% if block.settings.title != blank %}
+          <h3>{{block.settings.title}}</h3>
+        {% endif %}
+        <ul>
+          {% if block.settings.icon_1 != blank %}
             <li><a href="https://facebook.com" target="_blank"><img 
-              src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/facebook.svg?v=1611600409" alt="Bikcraft Facebook"></a></li>
+            src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/{{block.settings.icon_1}}.svg?v=1611600409" alt="Bikcraft Facebook"></a></li>  
+          {% endif %}
+          {% if block.settings.icon_2 != blank %}
             <li><a href="https://instagram.com" target="_blank"><img 
-              src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/instagram.svg?v=1611600409" alt="Bikcraft Instagram"></a></li>
+            src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/instagram.svg?v=1611600409" alt="Bikcraft Instagram"></a></li>
+          {% endif %}
+          {% if block.settings.icon_3 != blank %}
             <li><a href="https://twitter.com" target="_blank"><img 
-              src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/twitter.svg?v=1611600409" alt="Bikcraft Twitter"></a></li>
-          </ul>
-        </div>
+            src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/twitter.svg?v=1611600409" alt="Bikcraft Twitter"></a></li>
+          {% endif %}
+        </ul>
       </div>
+      {% endcase %}
+    {% endfor %}
     </div>
+  </div>
 
-    <div class="copy">
-      <div class="container">
-        <p class="grid-16">Bikcraft 2020 - Alguns direitos reservados.</p>
-        <p class="developed">Developed by: <a href="https://www.linkedin.com/in/filipe-magioni-mattos-422661196/" target="_blank">Filipe Magioni Mattos</a>
-      </div>
+  <div class="copy">
+    <div class="container">
+      <p class="grid-16">Bikcraft 2020 - Alguns direitos reservados.</p>
+      <p class="developed">Developed by: <a href="https://www.linkedin.com/in/filipe-magioni-mattos-422661196/" target="_blank">Filipe Magioni Mattos</a>
     </div>
-  </footer>
+  </div>
+</footer>
+
+{% schema %}
+  {
+  "name":{
+    "pt-BR":"Rodapé"
+  },
+  "max_blocks": 3,
+  "blocks":[
+    {
+      "type":"link_list",
+      "name":{
+        "cs":"Nabídka",
+        "da":"Menu",
+        "de":"Menü",
+        "en":"Menu",
+        "es":"Menú",
+        "fi":"Valikko",
+        "fr":"Menu",
+        "it":"Menu",
+        "ja":"メニュー",
+        "ko":"메뉴",
+        "nb":"Meny",
+        "nl":"Menu",
+        "pl":"Menu",
+        "pt-BR":"Menu",
+        "pt-PT":"Menu",
+        "sv":"Meny",
+        "th":"เมนู",
+        "tr":"Menü",
+        "vi":"Menu",
+        "zh-CN":"菜单",
+        "zh-TW":"選單"
+      },
+      "settings":[
+        {
+          "type":"text",
+          "id":"title",
+          "label":{
+            "cs":"Nadpis",
+            "da":"Overskrift",
+            "de":"Überschrift",
+            "en":"Heading",
+            "es":"Título",
+            "fi":"Otsake",
+            "fr":"Titre",
+            "it":"Heading",
+            "ja":"見出し",
+            "ko":"제목",
+            "nb":"Overskrift",
+            "nl":"Kop",
+            "pl":"Nagłówek",
+            "pt-BR":"Título",
+            "pt-PT":"Título",
+            "sv":"Rubrik",
+            "th":"ส่วนหัว",
+            "tr":"Başlık",
+            "vi":"Tiêu đề",
+            "zh-CN":"标题",
+            "zh-TW":"標題"
+          },
+          "default":{
+            "cs":"Rychlé odkazy",
+            "da":"Genvejslinks",
+            "de":"Quick-Links",
+            "en":"Quick links",
+            "es":"Enlaces rápidos",
+            "fi":"Pikalinkit",
+            "fr":"Liens rapides",
+            "it":"Link rapidi",
+            "ja":"クイックリンク",
+            "ko":"빠른 링크",
+            "nb":"Hurtigkoblinger",
+            "nl":"Snelle links",
+            "pl":"Szybkie linki",
+            "pt-BR":"Links rápidos",
+            "pt-PT":"Ligações rápidas",
+            "sv":"Snabblänkar",
+            "th":"ลิงก์ด่วน",
+            "tr":"Hızlı bağlantılar",
+            "vi":"Liên kết nhanh",
+            "zh-CN":"快速链接",
+            "zh-TW":"快速連結"
+          }
+        },
+        {
+          "type":"text",
+          "id":"contact_1",
+          "label":{
+            "cs":"Nabídka",
+            "da":"Menu",
+            "de":"Menü",
+            "en":"Menu",
+            "es":"Menú",
+            "fi":"Valikko",
+            "fr":"Menu",
+            "it":"Menu",
+            "ja":"メニュー",
+            "ko":"메뉴",
+            "nb":"Meny",
+            "nl":"Menu",
+            "pl":"Menu",
+            "pt-BR":"1° contato",
+            "pt-PT":"Menu",
+            "sv":"Meny",
+            "th":"เมนู",
+            "tr":"Menü",
+            "vi":"Menu",
+            "zh-CN":"菜单",
+            "zh-TW":"選單"
+          }
+        },
+        {
+          "type": "text",
+          "id": "contact_2",
+          "label": {
+            "pt-BR": "2° Contato"
+          }
+        },
+        {
+          "type": "text",
+          "id": "contact_3",
+          "label": {
+            "pt-BR": "3° Contato"
+          }
+        }
+      ]
+    },
+    {
+      "type":"text",
+      "name":{
+        "cs":"Text",
+        "da":"Tekst",
+        "de":"Text",
+        "en":"Text",
+        "es":"Texto",
+        "fi":"Teksti",
+        "fr":"Texte",
+        "it":"Testo",
+        "ja":"テキスト",
+        "ko":"텍스트",
+        "nb":"Tekst",
+        "nl":"Tekst",
+        "pl":"Tekst",
+        "pt-BR":"Texto",
+        "pt-PT":"Texto",
+        "sv":"Text",
+        "th":"ข้อความ",
+        "tr":"Metin",
+        "vi":"Văn bản",
+        "zh-CN":"文本",
+        "zh-TW":"文字"
+      },
+      "settings":[
+        {
+          "type":"text",
+          "id":"title",
+          "label":{
+            "cs":"Nadpis",
+            "da":"Overskrift",
+            "de":"Überschrift",
+            "en":"Heading",
+            "es":"Título",
+            "fi":"Otsake",
+            "fr":"Titre",
+            "it":"Heading",
+            "ja":"見出し",
+            "ko":"제목",
+            "nb":"Overskrift",
+            "nl":"Kop",
+            "pl":"Nagłówek",
+            "pt-BR":"Título",
+            "pt-PT":"Título",
+            "sv":"Rubrik",
+            "th":"ส่วนหัว",
+            "tr":"Başlık",
+            "vi":"Tiêu đề",
+            "zh-CN":"标题",
+            "zh-TW":"標題"
+          },
+          "default":{
+            "cs":"Informujte o svém obchodu",
+            "da":"Fortæl om din virksomhed",
+            "de":"Rede über dein Unternehmen",
+            "en":"Talk about your business",
+            "es":"Habla sobre tu negocio",
+            "fi":"Kerro yrityksestäsi",
+            "fr":"Parlez de votre entreprise",
+            "it":"Parla della tua attività commerciale",
+            "ja":"あなたのビジネスについて語る",
+            "ko":"비즈니스에 대한 이야기하기",
+            "nb":"Snakk om bedriften din",
+            "nl":"Vertel over je bedrijf",
+            "pl":"Opowiedz o swojej firmie",
+            "pt-BR":"Fale sobre o seu negócio",
+            "pt-PT":"Fale sobre o seu negócio",
+            "sv":"Prata om ditt företag",
+            "th":"พูดถึงธุรกิจของคุณ",
+            "tr":"İşletmenizden bahsedin",
+            "vi":"Chia sẻ về doanh nghiệp của bạn",
+            "zh-CN":"介绍您的业务",
+            "zh-TW":"描述您的商家"
+          }
+        },
+        {
+          "type":"textarea",
+          "id":"text",
+          "label":{
+            "cs":"Text",
+            "da":"Tekst",
+            "de":"Text",
+            "en":"Text",
+            "es":"Texto",
+            "fi":"Teksti",
+            "fr":"Texte",
+            "it":"Testo",
+            "ja":"テキスト",
+            "ko":"텍스트",
+            "nb":"Tekst",
+            "nl":"Tekst",
+            "pl":"Tekst",
+            "pt-BR":"Texto",
+            "pt-PT":"Texto",
+            "sv":"Text",
+            "th":"ข้อความ",
+            "tr":"Metin",
+            "vi":"Văn bản",
+            "zh-CN":"文本",
+            "zh-TW":"文字"
+          }
+        }
+      ]
+    },
+    {
+      "type": "icons",
+      "name": {
+        "pt-BR": "Icones"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "pt-BR": "Titulo"
+          }
+        },
+        {
+          "type": "text",
+          "id": "icon_1",
+          "label": {
+            "pt-BR": "1° Icone"
+          }
+        },
+        {
+          "type": "text",
+          "id": "icon_2",
+          "label": {
+            "pt-BR": "2° Icone"
+          }
+        },
+        {
+          "type": "text",
+          "id": "icon_3",
+          "label": {
+            "pt-BR": "3° icone"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
