@@ -1,0 +1,100 @@
+<section class="produtos container fadeInRight" data-anime="200" >
+  {% if section.settings.title != blank %}
+    <h2 class="subtitulo">{{section.settings.title}}</h2>
+  {% endif %}
+    <ul class="produtos_lista">
+    {% for block in section.blocks %}
+      <li class="grid-1-3" data-anime="1200">
+        {% if block.settings.icone != blank %}
+          <div class="produtos_img">
+            <img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/{{block.settings.icone}}.svg?v=1611600270" alt="Bikecraft {{block.settings.icone}}">
+          </div>
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h3>{{block.settings.title}}</h3>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <p>{{block.settings.text}}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+    <div class="call">
+      {% if section.settings.call_to_action != blank %}
+        <p>{{section.settings.call_to_action}}</p>
+      {% endif %}
+      {% if section.settings.button_content != blank %}
+        <a href="{{section.settings.button.link}}" class="btn btn_preto">{{section.settings.button_content}}</a>
+      {% endif %}
+    </div>
+  </section>
+
+{% schema %}
+{
+  "name":{
+    "pt-BR":"Classificação dos produtos"
+  },
+  "max_blocks":3,
+  "settings":[
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "pt-BR": "Titulo"
+      }
+    },
+    {
+      "type": "text",
+      "id": "call_to_action",
+      "label": {
+        "pt-BR": "Texto Chamativo"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_content",
+      "label": {
+        "pt-BR": "Etiqueta de botão"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "pt-BR": "Link do botão"
+      }
+    }
+  ],
+  "blocks":[
+    {
+      "type":"text_block",
+      "name":{
+        "pt-BR":"Coluna"
+      },
+      "settings":[
+        {
+          "type":"text",
+          "id":"icone",
+          "label":{
+            "pt-BR": "Nome do icone que representa o produto"          
+          }
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "pt-BR": "Nome da categoria do produto"
+          }
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": {
+            "pt-BR": "Breve descrição"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
