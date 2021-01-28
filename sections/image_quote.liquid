@@ -1,0 +1,59 @@
+<style>
+  .bg_img{
+    background: url({{section.settings.bg_image | img_url: '1400x220'}}) no-repeat center;
+  }
+</style>
+{% if section.settings.bg_image != blank %}
+  <section class="quebra bg_img">
+    <blockquote class="quote_externo container">
+    {% if section.settings.quote != blank %}
+      <p>{{section.settings.quote}}</p>
+    {% endif %}
+    {% if section.settings.author != blank %}
+      <cite>{{section.settings.author}}</cite>
+    {% endif %}
+    </blockquote>
+  </section>  
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": {
+      "pt-BR": "Quebra de pagina"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": {
+          "pt-BR": "Quebra de pagina"
+        }
+      },
+      {
+        "type": "textarea",
+        "id": "quote",
+        "label": {
+          "pt-BR": "Frase"
+        }
+      },
+      {
+        "type": "text",
+        "id": "author",
+        "label": {
+          "pt-BR": "Autor"
+        }
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "pt-BR": "Quebra"
+        },
+        "category": {
+          "pt-BR": "Decoração"
+        }
+      }
+    ]
+  }
+{% endschema %}
