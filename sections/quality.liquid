@@ -1,0 +1,140 @@
+<section class="qualidade container">
+  {% if section.settings.title != blank %}
+    <h2 class="subtitulo">{{section.settings.title}}</h2>
+  {% endif %}
+  {% if section.settings.svg_image != blank %}
+    <img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/{{section.settings.svg_image}}.svg?v=1611600270" alt="Bikcraft">
+  {% endif %}
+    <ul class="qualidade_lista">
+      <li class="grid-1-3">
+      {% if section.settings.left_item_title != blank %}
+        <h3>{{section.settings.left_item_title}}</h3>
+      {% endif %}
+      {% if section.settings.left_item_desc != blank %}
+        <p>{{section.settings.left_item_desc}}</p>
+      {% endif %}
+      </li>
+      <li class="grid-1-3">
+      {% if section.settings.center_item_title != blank %}
+        <h3>{{section.settings.center_item_title}}</h3>
+      {% endif %}
+      {% if section.settings.center_item_desc != blank %}
+        <p>{{section.settings.center_item_desc}}</p>
+      {% endif %}
+      </li>
+      <li class="grid-1-3">
+      {% if section.settings.right_item_title != blank %}
+        <h3>{{section.settings.right_item_title}}</h3>
+      {% endif %}
+      {% if section.settings.right_item_desc != blank %}
+        <p>{{section.settings.right_item_desc}}</p>
+      {% endif %}
+      </li>
+    </ul>
+    <div class="call">
+      {% if section.settings.call_to_action != blank %}
+        <p>{{section.settings.call_to_action}}</p>
+      {% endif %}
+      {% if section.settings.button_content != blank %}
+        <a href="{{section.settings.button.link}}" class="btn btn_preto">{{section.settings.button_content}}</a>
+      {% endif %}
+    </div>
+  </section>
+
+{% schema %}
+  {
+    "name": {
+      "pt-BR": "Qualidade"
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": {
+          "pt-BR": "Titulo da seção"
+        }
+      },
+      {
+        "type": "text",
+        "id": "svg_image",
+        "label": {
+          "pt-BR": "Nome da imagem svg do centro"
+        }
+      },
+      {
+        "type": "text",
+        "id": "left_item_title",
+        "label": {
+          "pt-BR": "Titulo do item da esquerda"
+        }
+      },
+      {
+        "type": "textarea",
+        "id": "left_item_desc",
+        "label": {
+          "pt-BR": "Descrição do item da esquerda"
+        }
+      },
+      {
+        "type": "text",
+        "id": "center_item_title",
+        "label": {
+          "pt-BR": "Titulo do item do meio"
+        }
+      },
+      {
+        "type": "textarea",
+        "id": "center_item_desc",
+        "label": {
+          "pt-BR": "Descrição do item do meio"
+        }
+      },
+      {
+        "type": "text",
+        "id": "right_item_title",
+        "label": {
+          "pt-BR": "Titulo do item da direita"
+        }
+      },
+      {
+        "type": "textarea",
+        "id": "right_item_desc",
+        "label": {
+          "pt-BR": "Descrição do item da direita"
+        }
+      },
+      {
+        "type": "text",
+        "id": "call_to_action",
+        "label": {
+          "pt-BR": "Texto Chamativo"
+        }
+      },
+      {
+        "type": "text",
+        "id": "button_content",
+        "label": {
+          "pt-BR": "Etiqueta de botão"
+        }
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": {
+          "pt-BR": "Link do botão"
+        }
+      }
+    ],
+    "presets":[
+      {
+        "name": {
+          "pt-BR": "Qualidade"
+        },
+        "category": {
+          "pt-BR": "Decoração"
+        }
+      }
+    ]
+  }
+  
+{% endschema %}
