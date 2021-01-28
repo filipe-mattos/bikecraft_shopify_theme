@@ -1,70 +1,136 @@
-<h1>{{ page.title }}</h1>
-{% form 'contact' %}
-  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-  {{ form.errors | default_errors }}
-  <label for="ContactFormName">name</label>
-  <input type="text" id="ContactFormName" name="contact[name]">
-  <label for="ContactFormEmail">email</label>
-  <input type="email" id="ContactFormEmail" name="contact[email]">
-  <label for="ContactFormPhone">phone</label>
-  <input type="tel" id="ContactFormPhone" name="contact[phone]">
-  <label for="ContactFormMessage">message</label>
-  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-  <input type="submit" value="send">
-{% endform %}
+<style>
+  .introducao_contato{
+  background: url(https://cdn.shopify.com/s/files/1/0530/8311/1586/files/bg-contato.jpg?v=1611600409) no-repeat center;
+  background-size: cover;
+}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/contato.css">
-  <link rel="stylesheet" href="css/responsivo.css">
-  <script>document.documentElement.classList.add('js');</script>
-  <title>Bikcraft Contato</title>
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <a class="grid-4" href="index.html">
-        <img src="img/bikcraft.svg" alt="Bikcraft">
-      </a>
-      <nav class="grid-12 header_menu">
-        <ul>
-          <li><a href="sobre.html">Sobre</a></li>
-          <li><a href="produtos.html">Produtos</a></li>
-          <li><a href="portifolio.html">Portifólio</a></li>
-          <li><a class="menu_ativo" href="contato.html">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- banner produtos -->
-  <section class="introducao_interna introducao_contato">
-    <div>
-      <h1 data-anime="400" class="fadeInDown">Contato</h1>
-        <p data-anime="800" class="fadeInDown">Tire suas dúvidas com a gente</p>
-    </div>
-  </section>
-  <!-- Fim banner produtos -->
-  <!-- Inicio Contato -->
-  <section class="contato container fadeInDown" data-anime="1200">
-    <form class="grid-8 contato_form">
-      <label for="nome">Nome</label>
-      <input type="text" id="nome">
-      <label for="email">E-mail</label>
-      <input type="text" id="nome">
-      <label for="telefone">Telefone</label>
-      <input type="text" id="nome">
-      <label for="espec">Especificações</label>
-      <textarea id="mensagem"></textarea>
-      <button type="submit" class="btn btn_preto">Enviar</button>
-    </form>
-    <div class="contato_dados grid-8">
+
+.contato{
+  padding: 40px 0;
+}
+
+.contato_form {
+  padding-right: 60px;
+}
+
+.contato_form label{
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 4px;
+}
+
+.contato_form input{
+  display: block;
+  width: 100%;
+  border: 4px solid #FEC63E;
+  background: none;
+  padding: 7px 10px;
+  outline: none;
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 10px;
+}
+
+.contato_form textarea{
+  display: block;
+  width: 100%;
+  height: 120px;
+  border: 4px solid #FEC63E;
+  background: none;
+  padding: 7px 10px;
+  outline: none;
+  font-size: 14px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 20px;
+}
+
+.contato_form button{
+  padding: 7px 40px;
+  background: none;
+}
+
+.contato_dados{
+  color: #000000;
+}
+
+.contato_dados h3{
+  color: #FEC63E;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.contato_dados span{
+  display: block;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.contato_dados span:nth-of-type(even){
+  margin-bottom: 30px;
+}
+
+.contato_dados ul{
+  margin-top: 10px;
+  padding-right: 60px;
+}
+
+.contato_dados ul li{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  padding: 10px 15px ;
+}
+
+.contato_dados p{
+  margin: 8px 0;
+}
+
+.contato_dados ul li{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.contato_dados ul li a{
+  border: 3px solid #FEC63E;
+  display: block;
+  padding: 10px;
+}
+
+.contato_dados ul li a:hover{
+  border: 3px solid #000000;
+}
+
+.contato_mapa{
+  margin-bottom: 60px;
+}
+</style>
+
+<section class="introducao_interna introducao_contato">
+  <div>
+    <h1 data-anime="400" class="fadeInDown">Contato</h1>
+      <p data-anime="800" class="fadeInDown">Tire suas dúvidas com a gente</p>
+  </div>
+</section>
+
+<section class="contato container fadeInDown" data-anime="1200">
+  <form class="grid-8 contato_form">
+    {% if form.posted_successfully? %} Thank you for your contact {% endif %}
+    {{ form.errors | default_errors }}
+    <label for="ContactFormName">Nome</label>
+    <input type="text" id="ContactFormName" name="contact[name]">
+    <label for="ContactFormEmail">E-mail</label>
+    <input type="email" id="ContactFormEmail" name="contact[email]">
+    <label for="ContactFormPhone">Telefone</label>
+    <input type="tel" id="ContactFormPhone" name="contact[phone]">
+    <label for="ContactFormMessage">Mensagem</label>
+    <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
+    <button class="btn btn_preto" type="submit" value="send">Enviar</button>
+  </form>
+  <div class="contato_dados grid-8">
       <h3>Dados</h3>
       <span>+55 21 93223 3232</span>
       <span>orçamento@bikcraft.com</span>
@@ -73,73 +139,14 @@
       <h3>Redes Sociais</h3>
       <ul>
         <li><a href="https://facebook.com" target="_blank"><img 
-        src="img/redes-sociais/facebook.svg" alt="Bikcraft Facebook"></a></li>
+        src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/facebook.svg?v=1611600409" alt="Bikcraft Facebook"></a></li>
         <li><a href="https://instagram.com" target="_blank"><img 
-        src="img/redes-sociais/instagram.svg" alt="Bikcraft Instagram"></a></li>
+        src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/instagram.svg?v=1611600409" alt="Bikcraft Instagram"></a></li>
         <li><a href="https://twitter.com" target="_blank"><img 
-        src="img/redes-sociais/twitter.svg" alt="Bikcraft Twitter"></a></li>
+        src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/twitter.svg?v=1611600409" alt="Bikcraft Twitter"></a></li>
       </ul>
     </div>
-  </section>
-  <!-- Fim Contato -->
-  <!-- Inicio Mapa -->
+</section>
   <section class="container">
-    <a class="grid-16 contato_mapa" href="https://google.com.br" target="_blank"><img src="img/endereco-bikcraft.jpg" alt="Endereço da Bikcraft" ></a>
+    <a class="grid-16 contato_mapa" href="https://google.com.br" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/endereco-bikcraft.jpg?v=1611600409" alt="Endereço da Bikcraft" ></a>
   </section>
-  <!-- Fim Mapa -->
-  <!-- Inicio quebra page na home page -->
-  <section class="quebra">
-    <blockquote class="quote_externo container">
-      <p>“O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
-          todos os detalhes da vida cotidiana.”</p>
-        <cite>WILLIAM MORRIS</cite>
-    </blockquote>
-  </section>
-  <!-- Fim quebra page na home page -->
-  <!-- Inicio footer na home page -->
-  <footer>
-    <div class="footer">
-      <div class="container">
-
-        <div class="grid-8 footer_historia">
-          <h3>Nossa História</h3>
-          <p>O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
-            todos os detalhes da vida cotidiana O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
-            todos os detalhes da vida cotidiana </p>
-        </div>
-
-        <div class="grid-4 footer_contato">
-          <h3>Contato</h3>
-          <ul>
-            <li>- 21 23232-4343</li>
-            <li>- contato@bikcraft.com</li>
-            <li>- Botafogo -RJ</li>
-          </ul>
-        </div>
-
-        <div class="grid-4 footer_redes-sociais">
-          <h3>Redes Sociais</h3>
-          <ul>
-            <li><a href="https://facebook.com" target="_blank"><img 
-              src="img/redes-sociais/facebook.svg" alt="Bikcraft Facebook"></a></li>
-            <li><a href="https://instagram.com" target="_blank"><img 
-              src="img/redes-sociais/instagram.svg" alt="Bikcraft Instagram"></a></li>
-            <li><a href="https://twitter.com" target="_blank"><img 
-              src="img/redes-sociais/twitter.svg" alt="Bikcraft Twitter"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="copy">
-      <div class="container">
-        <p class="grid-16">Bikcraft 2020 - Alguns direitos reservados.</p>
-        <p class="developed">Developed by: <a href="https://www.linkedin.com/in/filipe-magioni-mattos-422661196/" target="_blank">Filipe Magioni Mattos</a>
-      </div>
-    </div>
-  </footer>
-  <!-- Fim do footer na home page -->
-  <script src="./js/simple-anime.js"></script>
-  <script src="./js/script.js"></script>
-</body>
-</html>

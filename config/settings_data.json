@@ -105,9 +105,100 @@
           "right_image": "shopify:\/\/shop_images\/passeio.jpg",
           "bottom_image": "shopify:\/\/shop_images\/esporte.jpg"
         }
+      },
+      "16118433469701557d": {
+        "type": "banners",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/bg-mobile.jpg",
+          "title": "BICICLETAS FEITAS A MÃO",
+          "text": "“não tenha nada em sua casa que você não considere útil ou acredita ser bonito”",
+          "cite": "WILLIAN MORRIS",
+          "text_button": "orçamento"
+        }
+      },
+      "16118435432ae6ba77": {
+        "type": "portifolio",
+        "settings": {
+          "title": "portifólio",
+          "left_image": "shopify:\/\/shop_images\/retro.jpg",
+          "right_image": "shopify:\/\/shop_images\/passeio.jpg",
+          "bottom_image": "shopify:\/\/shop_images\/esporte.jpg",
+          "call_to_action": "conheça mais nosso portfólio",
+          "button_content": "portifólio"
+        }
+      },
+      "1611843551c350c3a4": {
+        "type": "product_overview",
+        "blocks": {
+          "e78c8974-615b-4650-93d5-ca5b359220fd": {
+            "type": "text_block",
+            "settings": {
+              "icone": "passeio",
+              "title": "passeio",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          },
+          "eacd9c64-cc9e-491b-8d4b-c9518d1ac8d9": {
+            "type": "text_block",
+            "settings": {
+              "icone": "esporte",
+              "title": "esporte",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          },
+          "83b87baf-0214-484b-97cc-6902ef7f3471": {
+            "type": "text_block",
+            "settings": {
+              "icone": "retro",
+              "title": "retrô",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          }
+        },
+        "block_order": [
+          "e78c8974-615b-4650-93d5-ca5b359220fd",
+          "eacd9c64-cc9e-491b-8d4b-c9518d1ac8d9",
+          "83b87baf-0214-484b-97cc-6902ef7f3471"
+        ],
+        "settings": {
+          "title": "produtos",
+          "call_to_action": "clique aqui e veja os detalhes dos produtos",
+          "button_content": "produtos",
+          "button_link": "shopify:\/\/collections\/all"
+        }
+      },
+      "16118491234714f8a4": {
+        "type": "quality",
+        "settings": {
+          "title": "QUALIDADE",
+          "svg_image": "bikcraft-qualidade",
+          "left_item_title": "DURABILIDADE",
+          "left_item_desc": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação",
+          "center_item_title": "DESIGN",
+          "center_item_desc": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação",
+          "right_item_title": "SUSTENTABILIDADE",
+          "right_item_desc": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação",
+          "call_to_action": "Conheça mais a nossa história",
+          "button_content": "sobre",
+          "button_link": "shopify:\/\/pages\/sobre"
+        }
+      },
+      "16118514601d088efa": {
+        "type": "image_quote",
+        "settings": {
+          "bg_image": "shopify:\/\/shop_images\/bg-footer.jpg",
+          "quote": "“O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana.”",
+          "author": "WILLIAM MORRIS"
+        }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+      "16118433469701557d",
+      "1611843551c350c3a4",
+      "16118435432ae6ba77",
+      "16118491234714f8a4",
+      "16118514601d088efa"
+    ]
   },
   "presets": {
     "Default": {}
