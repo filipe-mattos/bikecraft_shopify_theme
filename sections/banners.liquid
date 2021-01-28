@@ -1,4 +1,11 @@
-<section class="introducao" >
+<style>
+  @media only screen and (max-width: 787px){
+    .bg_mobile{
+      background: url({{section.settings.bg_image | img_url: '768x380'}}) no-repeat center;
+    }
+  }
+</style>
+<section class="introducao bg_mobile" >
     <div>
       {% if section.settings.title != blank %}
         <h1 data-anime="400" class="fadeInDown">{{ section.settings.title | escape }}</h1>
@@ -33,6 +40,13 @@
         }
       ],
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": {
+            "pt-BR": "Imagem de fundo"
+          }
+        },
         {
           "type": "text",
           "id": "title",
