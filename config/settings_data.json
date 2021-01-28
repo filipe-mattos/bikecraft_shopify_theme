@@ -1,5 +1,114 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "banners": {
+        "type": "banners",
+        "settings": {
+          "title": "BICICLETAS FEITAS A MÃO",
+          "text": "“não tenha nada em sua casa que você não considere útil ou acredita ser bonito”",
+          "cite": "WILLIAN MORRIS",
+          "text_button": "orçamento"
+        }
+      },
+      "text": {
+        "type": "text",
+        "settings": {
+          "title": "Text columns with images",
+          "align_text": "left"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "e00e4ff9-3a05-44f1-be2b-08b7ec0a87c3": {
+            "type": "text",
+            "settings": {
+              "title": "nossa história",
+              "text": "O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana O verdadeiro segredo da felicidade está em ter um genuíno interesse por todos os detalhes da vida cotidiana"
+            }
+          },
+          "eff58b66-83e0-4e22-a13e-804d81bef955": {
+            "type": "link_list",
+            "settings": {
+              "title": "Contato",
+              "contact_1": "21 23232-4343",
+              "contact_2": "contato@bikcraft.com",
+              "contact_3": "Botafogo -RJ"
+            }
+          },
+          "1c02ae03-b3e4-4616-b68a-4555b12c7bb1": {
+            "type": "icons",
+            "settings": {
+              "title": "redes sociais",
+              "icon_1": "facebook",
+              "icon_2": "instagram",
+              "icon_3": "twitter"
+            }
+          }
+        },
+        "block_order": [
+          "e00e4ff9-3a05-44f1-be2b-08b7ec0a87c3",
+          "eff58b66-83e0-4e22-a13e-804d81bef955",
+          "1c02ae03-b3e4-4616-b68a-4555b12c7bb1"
+        ],
+        "settings": {}
+      },
+      "product_overview": {
+        "type": "product_overview",
+        "blocks": {
+          "a3d2a9a0-da05-4b7f-a52f-239e7e615956": {
+            "type": "text_block",
+            "settings": {
+              "icone": "passeio",
+              "title": "passeio",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          },
+          "7f66fc6d-948e-4dac-8d86-4fe98c2a56b5": {
+            "type": "text_block",
+            "settings": {
+              "icone": "esporte",
+              "title": "esporte",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          },
+          "4d94f174-d1cf-442e-aad9-628f515b905c": {
+            "type": "text_block",
+            "settings": {
+              "icone": "retro",
+              "title": "retrô",
+              "text": "Ainda assim, existem dúvidas a respeito de como a necessidade de renovação"
+            }
+          }
+        },
+        "block_order": [
+          "a3d2a9a0-da05-4b7f-a52f-239e7e615956",
+          "7f66fc6d-948e-4dac-8d86-4fe98c2a56b5",
+          "4d94f174-d1cf-442e-aad9-628f515b905c"
+        ],
+        "settings": {
+          "title": "Produtos",
+          "call_to_action": "clique aqui e veja os detalhes dos produtos",
+          "button_content": "produtos",
+          "button_link": "shopify:\/\/collections\/all"
+        }
+      },
+      "portifolio": {
+        "type": "portifolio",
+        "settings": {
+          "title": "portifólio",
+          "left_image": "shopify:\/\/shop_images\/retro.jpg",
+          "right_image": "shopify:\/\/shop_images\/passeio.jpg",
+          "bottom_image": "shopify:\/\/shop_images\/esporte.jpg"
+        }
+      }
+    },
+    "content_for_index": []
+  },
   "presets": {
     "Default": {}
   }

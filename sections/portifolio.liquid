@@ -1,0 +1,99 @@
+<section class="portfolio">
+  <div class="container">
+    {% if section.settings.title != blank %}
+      <h2 class="subtitulo">{{section.settings.title}}</h2>
+    {% endif %}
+    <ul class="portfolio_lista">
+      {% if section.settings.left_image != blank %}
+        <li class="grid-8">
+          <img src="{{section.settings.left_image | img_url: '460x280'}}" alt="Bicicleta retrô">
+        </li>
+      {% endif %}
+      {% if section.settings.right_image != blank %}
+        <li class="grid-8">
+          <img src="{{section.settings.right_image | img_url: '460x280'}}" alt="Bicicleta passeio">
+        </li>
+      {% endif %}
+      {% if section.settings.bottom_image != blank %}
+        <li class="grid-16">
+          <img src="{{section.settings.bottom_image | img_url: '940x280'}}" alt="Bicicleta esporte">
+        </li>
+      {% endif %}
+    </ul>
+    <div class="call">
+      {% if section.settings.call_to_action != blank %}
+        <p>{{section.settings.call_to_action}}</p>
+      {% endif %}
+      {% if section.settings.button_content != blank %}
+        <a href="{{section.settings.button.link}}" class="btn btn_preto">{{section.settings.button_content}}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":{
+    "pt-BR":"Portifolio"
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "pt-BR": "Titulo"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": {
+        "pt-BR": "Imagem da Esquerda"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": {
+        "pt-BR": "Imagem da direita"
+      }
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image",
+      "label": "Imagem Inferior"
+    },
+    {
+      "type": "text",
+      "id": "call_to_action",
+      "label": {
+        "pt-BR": "Texto Chamativo"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_content",
+      "label": {
+        "pt-BR": "Etiqueta de botão"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": {
+        "pt-BR": "Link do botão"
+      }
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "pt-BR": "Portifolio"
+      },
+      "category": {
+        "pt-BR": "Imagem"
+      }
+    }
+  ]
+}
+{% endschema %}
