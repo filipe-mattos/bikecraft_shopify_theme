@@ -10,6 +10,9 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+  {{ 'script.js' | asset_url | script_tag }}
+  {{ 'simple-anime.js' | asset_url | script_tag }}
+  {{ 'simple-slide.js' | asset_url | script_tag }}
   {{ 'responsivo.css' | | asset_url | stylesheet_tag }}
 </head>
 <body>
@@ -31,7 +34,6 @@
 {%- endcomment -%}
   <main role="main">
     {{ content_for_layout }}
-
   </main>
   {{ content_for_footer }}
   {% section 'footer' %}

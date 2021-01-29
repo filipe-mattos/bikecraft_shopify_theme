@@ -1,0 +1,81 @@
+<!-- banner homepage -->
+<style>
+  .introducao_portifolio{
+    background: url(https://cdn.shopify.com/s/files/1/0530/8311/1586/files/bg-portfolio.jpg?v=1611600270) no-repeat center;
+    background-size: cover;
+  }
+  
+.depoimento_clientes{
+  padding: 60px 0;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.depoimento_clientes p{
+  text-align: center;
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 25px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.depoimento_clientes cite{
+  float: right;
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 25px;
+  font-weight: bold;
+  font-style: normal;
+}
+</style>
+
+  
+  <section class="introducao_portifolio introducao_interna">
+    <div>
+      <h1 data-anime="400" class="fadeInDown">{{page.title}}</h1>
+      <p data-anime="800" class="fadeInDown">Conheça os projetos que amamos mostrar</p>
+  </section>
+  <!-- Fim banner homepage -->
+  
+  <!-- Inicio Depoimentos -->
+  <section class="container fadeInDown" data-slide = "quote" data-anime="1200">
+    <blockquote class="depoimento_clientes">
+      {{page.content}}
+    </blockquote>
+  </section>
+  <!-- Fim Depoimentos -->
+
+  <!-- Campo de portfolio na home page -->
+  <section class="portfolio">
+    <div class="container" data-slide="portifolio">
+      <ul class="portfolio_lista">
+        <li class="grid-8">
+          <img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/retro.jpg?v=1611600270" alt="Bicicleta retrô">
+        </li>
+        <li class="grid-8">
+          <img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/passeio.jpg?v=1611600270" alt="Bicicleta passeio">
+        </li>
+        <li class="grid-16">
+          <img src="https://cdn.shopify.com/s/files/1/0530/8311/1586/files/esporte.jpg?v=1611600270" alt="Bicicleta esporte">
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Fim campo de portfolio na home page -->
+  <!-- Inicio quebra page na home page -->
+<style>
+  .bg_img{
+    background: url(https://cdn.shopify.com/s/files/1/0530/8311/1586/files/bg-footer.jpg?v=1611600270) no-repeat center;
+    background-size: cover;
+    margin: 40px 0 0 0;
+  }
+</style>
+
+<section class="quebra bg_img">
+  <blockquote class="quote_externo container">
+    <p>“O verdadeiro segredo da felicidade está em ter um genuíno interesse por 
+        todos os detalhes da vida cotidiana.”</p>
+      <cite>WILLIAM MORRIS</cite>
+  </blockquote>
+</section>
